@@ -18,7 +18,7 @@ infrastructureDefinition:
   deploymentType: ${var.deployment_type}
   type: ${var.type}
   spec:
-    connectorRef: project.${var.connector}
+    connectorRef: ${var.connector}
     namespace: ${var.namespace}
     releaseName: release-<+INFRA_KEY>
   allowSimultaneousDeployments: false
