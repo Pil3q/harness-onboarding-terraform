@@ -25,6 +25,8 @@ service:
                   folderPath: overlays
                   repoName: bic-delegate
                   branch: main
+              patchesPaths:
+                - overlays/delegate.yaml
               pluginPath: ""
               skipResourceVersioning: false
               enableDeclarativeRollback: false
