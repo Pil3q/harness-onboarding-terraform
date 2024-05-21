@@ -22,5 +22,5 @@ module "infrastructure-definition" {
   project = var.PROJ
   organization = var.ORG
   env = module.environment.id
-  connector = module.connector.id
+  connector = module.k8s_connector.id
 }
