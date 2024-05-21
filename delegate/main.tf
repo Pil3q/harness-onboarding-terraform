@@ -2,7 +2,7 @@ module "k8s_connector" {
   source  = "../modules/connectors"
   project = var.project
   cluster = var.cluster
-  organization_id = var.organization
+  organization = var.organization
   
 }
 

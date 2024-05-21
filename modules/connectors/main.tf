@@ -12,7 +12,7 @@ locals {
 */
 
 data "harness_platform_organization" "this" {
-  identifier = var.organization_id
+  identifier = var.organization
 }
 
 data "harness_platform_project" "this" {
@@ -25,6 +25,6 @@ resource "harness_platform_connector_kubernetes" "this" {
   name        = var.cluster
 
   inherit_from_delegate {
-    delegate_selectors = ["${var.project}-harness-delegate"]
+    delegate_selectors = ["${var.cluster}"]
   }
 }
