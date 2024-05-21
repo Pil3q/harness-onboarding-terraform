@@ -1,5 +1,5 @@
 
-variable "organization_id" {
+variable "organization" {
   description = "The Harness Organization ID."
 }
 

@@ -3,6 +3,7 @@ terraform {
     harness = {
       source  = "harness/harness"
       version = "0.20.0"
+      account_id = "Zj4OKPnVSJSTA0LFDHKNaA"
     }
     random = {
       source = "hashicorp/random"
