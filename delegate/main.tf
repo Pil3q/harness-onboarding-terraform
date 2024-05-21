@@ -16,3 +16,11 @@ module "environment" {
   project = var.PROJ
   organization = var.ORG
 }
+
+module "infrastructure_definition" {
+  source  = "../modules/infrastructure-definition"
+  project = var.PROJ
+  organization = var.ORG
+  env = module.environment.id
+  connector = module.connector.id
+}
