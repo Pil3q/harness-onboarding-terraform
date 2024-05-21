@@ -1,5 +1,0 @@
----
-dqsCluster:
-  selector: BKSTeam-harness-delegate
-prodCluster:
-  selector: BKSTeam-harness-delegate
