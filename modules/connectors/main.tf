@@ -16,15 +16,15 @@ data "harness_platform_organization" "this" {
 }
 
 data "harness_platform_project" "this" {
-  name = "${var.team_name}"
+  name = "${var.project}"
   org_id = data.harness_platform_organization.this.id
 }
 
 resource "harness_platform_connector_kubernetes" "this" {
-  identifier  = var.identifier
-  name        = var.name
+  identifier  = var.cluster
+  name        = var.cluster
 
   inherit_from_delegate {
-    delegate_selectors = ["${var.team_name}-harness-delegate"]
+    delegate_selectors = ["${var.project}-harness-delegate"]
   }
 }
