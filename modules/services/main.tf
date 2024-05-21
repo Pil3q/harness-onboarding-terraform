@@ -1,32 +1,35 @@
-locals {
-  config_path            = "${path.module}/../../config"
-  k8s_service_config     = yamldecode(file("${local.config_path}/${var.team_name}/K8s/services.yaml"))
-}
+resource "harness_platform_service" "this" {
+  org_id       = var.organization
+  project_id   = var.project
+  name         = var.name
+  identifier   = var.name
 
-data "harness_platform_organization" "this" {
-  identifier = var.organization_id
-}
-
-data "harness_platform_project" "this" {
-  name = "${var.team_name}"
-  org_id = data.harness_platform_organization.this.id
-}
-
-resource "random_string" "this" {
-  length = 4
-  special = false
-  upper = false
-  number = false
-}
-
-module "kubernetes" {
-  for_each        = local.k8s_service_config
-  source          = "./service-kubernetes"
-  organization_id = data.harness_platform_organization.this.id
-  team_name       = var.team_name
-  name            = each.key
-  identifier      = "${each.key}_${random_string.this.result}"
-  repo_name       = each.value.repoName
-  branch          = each.value.branch
-  image           = each.value.image
+  yaml         = <<-EOT
+service:
+  name: ${var.name}
+  identifier: ${var.name}
+  orgIdentifier: ${var.organization}
+  projectIdentifier: ${var.project}
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: kustomize
+            type: Kustomize
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: account.BCGitAccount
+                  gitFetchType: Branch
+                  folderPath: overlays
+                  repoName: bic-delegate
+                  branch: main
+              patchesPaths:
+                - overlays/delegate.yaml
+              pluginPath: ""
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+    type: Kubernetes
+EOT
 }
