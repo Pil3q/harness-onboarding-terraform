@@ -17,7 +17,7 @@ module "environment" {
   organization = var.ORG
 }
 
-module "infrastructure_definition" {
+module "infrastructure-definition" {
   source  = "../modules/infrastructure-definition"
   project = var.PROJ
   organization = var.ORG
