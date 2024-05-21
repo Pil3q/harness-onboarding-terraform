@@ -1,7 +1,0 @@
----
-DQS:
-  type: PreProduction
-  level: org
-Prod:
-  type: Production
-  level: org
