@@ -5,6 +5,7 @@ resource "harness_platform_infrastructure" "this" {
   env_id          = var.env
   type            = var.type
   deployment_type = var.deployment_type
+  project_id      = var.project
 
   yaml            =  <<-EOT
 infrastructureDefinition:
