@@ -1,11 +1,11 @@
-variable "team_name" {
+variable "project" {
   description = "The Team Name."
 }
 
-variable "organization_id" {
+variable "organization" {
   description = "The Harness Organization ID."
 }
 
-variable "identifier" {
+variable "cluster" {
   description = "The Harness Connector Identifier."
 }
