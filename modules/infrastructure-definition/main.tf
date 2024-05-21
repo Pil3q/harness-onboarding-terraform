@@ -4,7 +4,7 @@ resource "harness_platform_infrastructure" "this" {
   identifier      = var.name
   env_id          = var.env
   type            = var.type
-  deployment_type = var.type
+  deployment_type = var.deployment_type
 
   yaml            =  <<-EOT
 infrastructureDefinition:
@@ -14,7 +14,7 @@ infrastructureDefinition:
   tags: {}
   orgIdentifier: ${var.organization}
   environmentRef: ${var.env}
-  deploymentType: ${var.type}
+  deploymentType: ${var.deployment_type}
   type: ${var.type}
   spec:
     connectorRef: project.${var.connector}
