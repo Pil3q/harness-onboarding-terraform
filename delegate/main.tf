@@ -25,3 +25,9 @@ module "infrastructure-definition" {
   # Are you going to work? 
   connector = module.k8s_connector.id
 }
+
+module "pipeline" {
+  source  = "../modules/pipelines"
+  project = var.PROJ
+  organization = var.ORGls
+}
