@@ -1,16 +1,16 @@
 variable "organization" {
-  type = string
+  type        = string
   description = "The Harness Organization ID."
 }
 
 variable "project" {
-  type = string
+  type        = string
   description = "The name of the resource."
 }
 
 variable "name" {
   description = "The name of the environment."
-  default = "delegate_infrastructure"
+  default     = "delegate_infrastructure"
 }
 
 variable "env" {
@@ -28,7 +28,7 @@ variable "connector" {
 
 variable "namespace" {
   description = "The namespace for the deployments."
-  default = "harness-delegate-ng"
+  default     = "harness-delegate-ng"
 }
 
 variable "deployment_type" {

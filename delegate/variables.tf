@@ -1,15 +1,15 @@
 
 variable "ORG" {
-  type = string
+  type        = string
   description = "The Harness Organization ID."
 }
 
 variable "PROJ" {
-  type = string
+  type        = string
   description = "The name of the resource."
 }
 
 variable "CLUSTER" {
-  type = string
+  type        = string
   description = "The identifier of the resource."
 }
