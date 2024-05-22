@@ -1,9 +1,9 @@
 resource "harness_platform_pipeline" "this" {
-  identifier    = var.name
-  org_id        = var.organization
-  project_id    = var.project
-  name          = var.name
-  yaml          = <<-EOT
+  identifier = var.name
+  org_id     = var.organization
+  project_id = var.project
+  name       = var.name
+  yaml       = <<-EOT
 pipeline:
   name: ${var.name}
   identifier: ${var.name}

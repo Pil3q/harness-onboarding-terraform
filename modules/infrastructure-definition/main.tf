@@ -7,7 +7,7 @@ resource "harness_platform_infrastructure" "this" {
   deployment_type = var.deployment_type
   project_id      = var.project
 
-  yaml            =  <<-EOT
+  yaml = <<-EOT
 infrastructureDefinition:
   name: ${var.name}
   identifier: ${var.name}

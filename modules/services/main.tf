@@ -1,10 +1,10 @@
 resource "harness_platform_service" "this" {
-  org_id       = var.organization
-  project_id   = var.project
-  name         = var.name
-  identifier   = var.name
+  org_id     = var.organization
+  project_id = var.project
+  name       = var.name
+  identifier = var.name
 
-  yaml         = <<-EOT
+  yaml = <<-EOT
 service:
   name: ${var.name}
   identifier: ${var.name}

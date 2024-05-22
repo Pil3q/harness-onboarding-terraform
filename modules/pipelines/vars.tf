@@ -1,10 +1,10 @@
 variable "organization" {
-  type = string
+  type        = string
   description = "The Harness Organization ID."
 }
 
 variable "project" {
-  type = string
+  type        = string
   description = "The name of the resource."
 }
 
