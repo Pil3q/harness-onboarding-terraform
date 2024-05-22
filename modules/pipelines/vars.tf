@@ -10,6 +10,7 @@ variable "project" {
 
 variable "name" {
   description = "The name of the pipeline."
+  default = "delegate_pipeline"
 }
 
 variable "type" {
