@@ -27,7 +27,7 @@ module "infrastructure-definition" {
 }
 
 module "pipeline" {
-  source  = "../modules/pipelines"
-  project = var.PROJ
-  organization = var.ORGls
+  source       = "../modules/pipelines"
+  project      = var.PROJ
+  organization = var.ORG
 }
