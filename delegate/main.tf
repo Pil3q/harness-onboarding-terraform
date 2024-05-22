@@ -37,10 +37,10 @@ module "pipeline" {
 
 }
 
-module "trigger" {
-  source       = "../modules/trigger"
-  project      = var.PROJ
-  organization = var.ORG
-  pipeline     = module.pipeline.id
-  name         = "${var.name}_trigger"
-}
+# module "trigger" {
+#   source       = "../modules/trigger"
+#   project      = var.PROJ
+#   organization = var.ORG
+#   pipeline     = module.pipeline.id
+#   name         = "${var.name}_trigger"
+# }
