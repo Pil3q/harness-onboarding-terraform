@@ -1,4 +1,4 @@
-resource "harness_platform_triggers" "webhook" {
+resource "harness_platform_triggers" "this" {
   identifier = var.name
   org_id     = var.organization
   project_id = var.project
