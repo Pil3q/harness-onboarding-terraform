@@ -72,6 +72,6 @@ pipeline:
       type: String
       description: ""
       required: false
-      value: <+input>
+      value: <+trigger.payload.cluster>
   EOT
 }
