@@ -12,3 +12,7 @@ variable "name" {
   description = "The name of the service."
   default     = "delegate_service"
 }
+
+variable "pipeline" {
+  description = "Pipeline identifier"
+}

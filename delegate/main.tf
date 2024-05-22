@@ -43,5 +43,4 @@ module "trigger" {
   organization = var.ORG
   pipeline     = module.pipeline.id
   name         = "${var.name}_trigger"
-
 }
