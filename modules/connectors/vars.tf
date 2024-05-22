@@ -1,4 +1,3 @@
-
 variable "organization" {
   type = string
   description = "The Harness Organization ID."
