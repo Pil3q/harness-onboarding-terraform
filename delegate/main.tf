@@ -9,12 +9,15 @@ module "delegate_service" {
   source       = "../modules/services"
   project      = var.PROJ
   organization = var.ORG
+  name         = "${var.name}_service"
+
 }
 
 module "environment" {
   source       = "../modules/environments"
   project      = var.PROJ
   organization = var.ORG
+  name         = "${var.name}_environment"
 }
 
 module "infrastructure-definition" {
@@ -30,4 +33,15 @@ module "pipeline" {
   source       = "../modules/pipelines"
   project      = var.PROJ
   organization = var.ORG
+  name         = "${var.name}_pipeline"
+
+}
+
+module "trigger" {
+  source       = "../modules/trigger"
+  project      = var.PROJ
+  organization = var.ORG
+  pipeline     = module.pipeline.id
+  name         = "${var.name}_trigger"
+
 }
