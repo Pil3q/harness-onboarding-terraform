@@ -5,7 +5,7 @@ resource "harness_platform_triggers" "this" {
   name       = var.name
   target_id  = var.pipeline
   yaml       = <<-EOT
-    trigger:
+  trigger:
     name: ${var.name}
     identifier: ${var.name}
     enabled: true
@@ -18,9 +18,9 @@ resource "harness_platform_triggers" "this" {
     source:
         type: Webhook
         spec:
-        type: Custom
-        spec:
-            payloadConditions: []
-            headerConditions: []
+            type: Custom
+            spec:
+                payloadConditions: []
+                headerConditions: []
     EOT
 }
